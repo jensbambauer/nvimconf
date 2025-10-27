@@ -12,6 +12,14 @@ return {
 			},
 		},
 	},
+	view = {
+		style = "sign",
+	},
+	mappings = {
+		apply_hunk = "<leader>ga",
+		reset_hunk = "<leader>gr",
+		textobject = "ih",
+	},
 	keys = {
 		{
 			"<leader>go",
