@@ -31,6 +31,7 @@ return {
 				"lua",
 				"gitignore",
 				"prisma",
+				"svelte",
 			},
 			incremental_selection = {
 				enable = true,

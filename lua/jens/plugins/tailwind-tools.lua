@@ -1,12 +1,14 @@
 return {
 	"luckasRanarison/tailwind-tools.nvim",
-	dependencies = { "nvim-treesitter/nvim-treesitter" },
-	opts = {
-		document_color = {
-			enabled = true, -- can be toggled by commands
-			kind = "inline", -- "inline" | "foreground" | "background"
-			inline_symbol = "󰝤 ", -- only used in inline mode
-			debounce = 200, -- in milliseconds, only applied in insert mode
-		},
+	name = "tailwind-tools",
+	build = ":UpdateRemotePlugins",
+	dependencies = {
+		"nvim-treesitter/nvim-treesitter",
 	},
+	opts = {
+		server = {
+			override = true, -- setup the server from the plugin if true
+			settings = {}, -- shortcut for `settings.tailwindCSS`
+		},
+	}, -- your configuration
 }
