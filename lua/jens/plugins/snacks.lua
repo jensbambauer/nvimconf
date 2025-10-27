@@ -6,14 +6,28 @@ return {
 	opts = {
 		bigfile = { enabled = true },
 		dashboard = { enabled = true },
-		explorer = { enabled = true, hidden = true, ignored = true },
+		explorer = {
+			enabled = true,
+			hidden = true,
+			ignored = true,
+		},
 		indent = { enabled = false },
 		input = { enabled = true },
 		notifier = {
 			enabled = true,
 			timeout = 3000,
 		},
-		picker = { enabled = true, hidden = true, ignored = true },
+		picker = {
+			enabled = true,
+			hidden = true,
+			ignored = true,
+			formatters = {
+				file = {
+					truncate = 100,
+					filename_first = true,
+				},
+			},
+		},
 		quickfile = { enabled = true },
 		scope = { enabled = true },
 		statuscolumn = { enabled = true },
@@ -212,13 +226,6 @@ return {
 				Snacks.picker.autocmds()
 			end,
 			desc = "Autocmds",
-		},
-		{
-			"<leader>sb",
-			function()
-				Snacks.picker.lines()
-			end,
-			desc = "Buffer Lines",
 		},
 		{
 			"<leader>sc",
