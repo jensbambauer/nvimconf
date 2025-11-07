@@ -14,6 +14,7 @@ return {
         "emmet_ls",
         "prismals",
         "pyright",
+        "eslint"
       },
     },
     dependencies = {
@@ -41,7 +42,7 @@ return {
         "isort",    -- python formatter
         "black",    -- python formatter
         "pylint",
-        -- "eslint_d",
+        "eslint_d",
       },
     },
     dependencies = {

@@ -27,3 +27,20 @@ keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }
 keymap.set("n", "ru", ":Rest run<cr>", { desc = "Run REST request" })
 keymap.set("n", "rr", ":Rest last<cr>", { desc = "Run REST request" })
 keymap.set("n", "ro", ":Rest open<cr>", { desc = "Open REST results" })
+
+vim.api.nvim_create_autocmd("CursorHold", {
+	callback = function()
+		vim.diagnostic.open_float(nil, {
+			focusable = false,
+			border = "none",
+			source = "always",
+			prefix = " ",
+			scope = "line",
+			max_width = 200,
+			wrap = true,
+			close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+		})
+	end,
+})
+
+vim.o.updatetime = 300
