@@ -43,7 +43,8 @@ return {
         "black",    -- python formatter
         "pylint",
         "eslint_d",
-        "biome"
+        "biome",
+        "oxlint"    -- oxc linter + LSP
       },
     },
     dependencies = {
