@@ -1,17 +1,5 @@
 return {
 	{
-		"neovim/nvim-lspconfig",
-		opts = function()
-			-- oxc language server setup
-			require("lspconfig").oxc_language_server.setup({
-				cmd = { "oxc_language_server" },
-				filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
-				root_dir = require("lspconfig.util").root_pattern("package.json", ".git"),
-				settings = {},
-			})
-		end,
-	},
-	{
 		"mfussenegger/nvim-lint",
 		event = { "BufReadPost", "BufNewFile" },
 		config = function()
