@@ -43,4 +43,7 @@ vim.api.nvim_create_autocmd("CursorHold", {
 	end,
 })
 
+
+keymap.set("n", "<leader>au", ":!arduino-cli compile --fqbn arduino:avr:leonardo %:p:h && arduino-cli upload -p /dev/cu.usbmodem11201 --fqbn arduino:avr:leonardo %:p:h<CR>")
+
 vim.o.updatetime = 300

@@ -6,10 +6,10 @@ return {
 
 		conform.setup({
 			formatters_by_ft = {
-				javascript = { "prettier" },
-				typescript = { "prettier" },
-				javascriptreact = { "prettier" },
-				typescriptreact = { "prettier" },
+				javascript = { "oxlint" },
+				typescript = { "oxlint" },
+				javascriptreact = { "oxlint" },
+				typescriptreact = { "oxlint" },
 				svelte = { "prettier" },
 				css = { "prettier" },
 				html = { "prettier" },
@@ -19,6 +19,12 @@ return {
 				graphql = { "prettier" },
 				liquid = { "prettier" },
 				python = { "isort", "black" },
+			},
+			formatters = {
+				oxlint = {
+					command = "oxlint",
+					args = { "--fix", "$FILENAME" },
+				},
 			},
 			format_on_save = {
 				lsp_fallback = true,
