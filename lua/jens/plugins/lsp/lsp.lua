@@ -18,6 +18,8 @@ return {
 
 		-- oxlint language server (uses oxlint --lsp)
 		require("lspconfig").oxlint.setup({
+			cmd = { "oxlint", "--lsp" },
+			root_dir = require("lspconfig.util").root_pattern(".oxlintrc.json", "package.json", ".git"),
 			capabilities = capabilities,
 		})
 	end,
