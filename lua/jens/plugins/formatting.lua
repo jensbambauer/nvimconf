@@ -6,14 +6,14 @@ return {
 
 		conform.setup({
 			formatters_by_ft = {
-				javascript = { "oxlint" },
-				typescript = { "oxlint" },
-				javascriptreact = { "oxlint" },
-				typescriptreact = { "oxlint" },
+				javascript = { "oxfmt" },
+				typescript = { "oxfmt" },
+				javascriptreact = { "oxfmt" },
+				typescriptreact = { "oxfmt" },
 				svelte = { "prettier" },
 				css = { "prettier" },
 				html = { "prettier" },
-				json = { "prettier" },
+				json = { "oxfmt" },
 				yaml = { "prettier" },
 				markdown = { "prettier" },
 				graphql = { "prettier" },
@@ -21,9 +21,10 @@ return {
 				python = { "isort", "black" },
 			},
 			formatters = {
-				oxlint = {
-					command = "oxlint",
-					args = { "--fix", "$FILENAME" },
+				oxfmt = {
+					command = "oxfmt",
+					args = { "--stdin-filepath", "$FILENAME" },
+					stdin = true,
 				},
 			},
 			format_on_save = {
